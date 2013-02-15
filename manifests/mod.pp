@@ -2,7 +2,6 @@ define apache::mod (
   $package = undef
 ) {
   $mod = $name
-  class { 'apache::params': }
   $mod_packages = $apache::params::mod_packages
   $mod_package = $mod_packages[$mod] # 2.6 compatibility hack
   if $package {
