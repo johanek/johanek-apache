@@ -32,8 +32,8 @@ define apache::vhost::proxy (
     $no_proxy_uris = []
   ) {
 
-  include apache
-  include apache::proxy
+  class { 'apache': }
+  class { 'apache::proxy': }
 
   $apache_name = $apache::params::apache_name
   $ssl_path = $apache::params::ssl_path
@@ -44,7 +44,7 @@ define apache::vhost::proxy (
   }
 
   if $ssl == true {
-    include apache::mod::ssl
+    class { 'apache::mod::ssl': }
   }
 
   # Template uses:

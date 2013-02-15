@@ -1,5 +1,5 @@
 class apache::mod::python {
-  #include apache
+  class { 'apache': }
   apache::mod { 'python': }
 }
 

@@ -27,7 +27,7 @@ define apache::vhost::redirect (
     $vhost_name    = '*'
   ) {
 
-  include apache
+  class { 'apache': }
 
   if $servername == '' {
     $srvname = $name

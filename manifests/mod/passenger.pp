@@ -1,5 +1,5 @@
 class apache::mod::passenger {
-  include 'apache'
+  class { 'apache': }
 
   apache::mod { 'passenger': }
 }

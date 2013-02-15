@@ -63,7 +63,7 @@ define apache::vhost(
   "${ensure} is not supported for ensure.
   Allowed values are 'present' and 'absent'.")
 
-  include apache
+  class { 'apache': }
 
   if $servername == '' {
     $srvname = $name
@@ -72,7 +72,7 @@ define apache::vhost(
   }
 
   if $ssl == true {
-    include apache::mod::ssl
+    class { 'apache::mod::ssl': }
   }
 
   # Since the template will use auth, redirect to https requires mod_rewrite

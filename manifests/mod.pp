@@ -2,8 +2,7 @@ define apache::mod (
   $package = undef
 ) {
   $mod = $name
-  include apache::params
-  #include apache #This creates duplicate resources in rspec-puppet
+  class { 'apache::params': }
   $mod_packages = $apache::params::mod_packages
   $mod_package = $mod_packages[$mod] # 2.6 compatibility hack
   if $package {

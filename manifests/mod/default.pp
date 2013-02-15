@@ -16,10 +16,10 @@ class apache::mod::default {
   apache::mod { 'authz_owner': }
   apache::mod { 'authz_user': }
   apache::mod { 'autoindex': }
-  include apache::mod::cache
-  include apache::mod::cgi
-  include apache::mod::dav
-  include apache::mod::dav_fs
+  class { 'apache::mod::cache': }
+  class { 'apache::mod::cgi': }
+  class { 'apache::mod::dav': }
+  class { 'apache::mod::dav_fs': }
   apache::mod { 'deflate': }
   apache::mod { 'dir': }
   apache::mod { 'env': }
@@ -34,7 +34,7 @@ class apache::mod::default {
   apache::mod { 'mime': }
   apache::mod { 'mime_magic': }
   apache::mod { 'negotiation': }
-  include apache::mod::proxy
+  class { 'apache::mod::proxy': }
   apache::mod { 'proxy_balancer': }
   apache::mod { 'proxy_connect': }
   apache::mod { 'proxy_ftp': }
