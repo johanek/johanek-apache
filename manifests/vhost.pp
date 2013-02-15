@@ -59,8 +59,6 @@ define apache::vhost(
     $ensure             = 'present'
   ) {
 
-  class { 'apache': }
-
   if $servername == '' {
     $srvname = $name
   } else {
