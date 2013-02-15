@@ -26,7 +26,7 @@ class apache (
   $sendfile     = false
 ) {
 
-  class { 'apache::params': }
+  class { 'apache::params': } ->
   class { 'apache::install': } ->
   class { 'apache::config': } ->
   class { 'apache::service }
