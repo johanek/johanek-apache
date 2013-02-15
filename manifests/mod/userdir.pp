@@ -1,5 +1,5 @@
 class apache::mod::userdir (
-  $dir = 'public_html',
+  $dir = 'public_html'
 ) {
   apache::mod { 'userdir': }
 
