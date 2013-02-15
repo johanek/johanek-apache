@@ -39,4 +39,18 @@ class apache::mod::default {
   apache::mod { 'suexec': }
   apache::mod { 'usertrack': }
   apache::mod { 'vhost_alias': }
+  
+  case $::operatingsystem {
+    /(?i:CentOS|RedHat|Fedora)/:  { 
+      class { 'apache::mod::dav': }
+      class { 'apache::mod::dav_fs': }
+      apache::mod { 'headers': }
+      apache::mod { 'log_config': }
+      apache::mod { 'logio': }
+      apache::mod { 'proxy_connect': }
+      apache::mod { 'version': }
+    }
+    default:                      { }
+  }
+  
 }
