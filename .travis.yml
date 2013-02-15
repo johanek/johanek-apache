@@ -22,4 +22,5 @@ matrix:
     - rvm: ruby-head
       env: PUPPET_GEM_VERSION="~> 2.6"
 notifications:
-  email: false
+  email:
+    - johan.vandendorpe@gmail.com
