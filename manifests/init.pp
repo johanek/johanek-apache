@@ -3,7 +3,7 @@
 # This class will install apache
 #
 #== Requirements
-# None
+# Puppet 2.7+
 #
 # == Parameters
 #
