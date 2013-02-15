@@ -65,10 +65,6 @@ define apache::vhost(
     $srvname = $servername
   }
 
-  if $ssl == true {
-    class { 'apache::mod::ssl': }
-  }
-
   # Since the template will use auth, redirect to https requires mod_rewrite
   if $redirect_ssl == true {
     if $::osfamily == 'debian' {
