@@ -16,14 +16,22 @@
 # [*version*]
 #   Set to desired version. Default: latest
 #
+# [*default_mods*]
+#   Install default set of mods from apache::mod::default. Default: true
+#
+# [*serveradmin*]
+#   Set serveradmin config. Default: root@localhost
+#
+# [*sendfile*]
+#   Use the kernel sendfile support to deliver files to the client. Default: false
+#
 class apache (
   $enabled        = true,
   $enableboot     = true,
   $version        = latest,
-  $default_mods = true,
-  $service_enable = true,
-  $serveradmin  = 'root@localhost',
-  $sendfile     = false
+  $default_mods   = true,
+  $serveradmin    = 'root@localhost',
+  $sendfile       = false
 ) {
 
   class { 'apache::params': } ->
