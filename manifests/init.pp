@@ -8,7 +8,15 @@
 # == Parameters
 #
 
+# [*enabled*]
+#   Set to 'false' to stop service
+#
+# [*enableboot*]
+#   Set to 'false' to prevent service starting at boot
+#
 class apache (
+  $enabled        = true,
+  $enableboot     = true,
   $default_mods = true,
   $service_enable = true,
   $serveradmin  = 'root@localhost',
@@ -17,17 +25,9 @@ class apache (
 
   class { 'apache::params': }
   class { 'apache::install': } ->
+  class { 'apache::service }
 
 
-  # true/false is sufficient for both ensure and enable
-  validate_bool($service_enable)
-
-  service { 'httpd':
-    ensure    => $service_enable,
-    name      => $apache::params::apache_name,
-    enable    => $service_enable,
-    subscribe => Package['httpd'],
-  }
 
   file { 'httpd_vdir':
     ensure  => directory,

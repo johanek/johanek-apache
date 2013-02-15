@@ -19,6 +19,18 @@
 #
 class apache::params {
 
+  # Service Status
+  $service_ensure = $apache::enabled ? {
+    false   => stopped,
+    default => running
+  }
+
+  $service_enable = $apache::enableboot ? {
+    false   => false,
+    default => true
+  }
+  
+  # Existing settings
   $ssl           = true
   $template      = 'apache/vhost-default.conf.erb'
   $priority      = '25'
