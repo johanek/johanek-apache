@@ -19,7 +19,7 @@ class apache::config {
       ensure  => present,
       content => template("apache/${apache::params::conf_file}.erb")
     }
-    if $default_mods == true {
+    if $apache::default_mods == true {
       class { 'apache::mod::default': }
     }
   }
