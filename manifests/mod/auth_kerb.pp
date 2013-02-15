@@ -1,5 +1,4 @@
 class apache::mod::auth_kerb {
-  class { 'apache': }
 
   package { 'mod_auth_kerb_package':
     ensure  => installed,
