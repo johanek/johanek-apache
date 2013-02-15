@@ -10,7 +10,7 @@ class apache::config {
     path    => $apache::params::vdir,
     recurse => true,
     purge   => true,
-    notify  => Service['httpd']
+    notify  => Class['apache::service']
   }
 
   # Redhat style config
@@ -28,7 +28,7 @@ class apache::config {
   if $apache::params::mod_dir {
     file { $apache::params::mod_dir:
       ensure  => directory,
-      require => Package['httpd'],
+      require => Class['apache::install'],
     } -> A2mod <| |>
     resources { 'a2mod':
       purge => true,

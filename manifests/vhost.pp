@@ -113,7 +113,7 @@ define apache::vhost(
       File[$docroot],
       File[$logroot],
     ],
-    notify  => Service['httpd'],
+    notify  => Class['apache::service']
   }
 
   if $configure_firewall {

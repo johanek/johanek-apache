@@ -41,8 +41,8 @@ define apache::vhost::redirect (
     owner   => 'root',
     group   => 'root',
     mode    => '0755',
-    require => Package['httpd'],
-    notify  => Service['httpd'],
+    require => Class['apache::install'],
+    notify  => Class['apache::service']
   }
 
   if ! defined(Firewall["0100-INPUT ACCEPT $port"]) {

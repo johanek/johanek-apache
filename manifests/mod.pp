@@ -24,7 +24,7 @@ define apache::mod (
   if $package_REAL {
     package { $package_REAL:
       ensure   => present,
-      require  => Package['httpd'],
+      require  => Class['apache::install'],
       before   => A2mod[$mod],
     }
   }
@@ -33,7 +33,7 @@ define apache::mod (
     ensure     => present,
     lib        => $lib,
     identifier => $identifier,
-    require    => Package['httpd'],
-    notify     => Service['httpd'],
+    require    => Class['apache::install'],
+    notify     => Class['apache::service']
   }
 }

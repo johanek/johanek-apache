@@ -65,8 +65,8 @@ define apache::vhost::proxy (
     owner   => 'root',
     group   => 'root',
     mode    => '0755',
-    require => Package['httpd'],
-    notify  => Service['httpd'],
+    require => Class['apache::install'],
+    notify  => Class['apache::service']
   }
 
 
