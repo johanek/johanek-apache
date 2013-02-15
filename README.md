@@ -1,6 +1,8 @@
 Puppetlabs module for Apache
 ============================
 
+[![Build Status](https://travis-ci.org/johanek/johanek-apache.png)](http://travis-ci.org/johanek/johanek-apache)
+
 Apache is widely-used web server and this module will allow to configure
 various modules and setup virtual hosts with minimal effort.
 
@@ -11,7 +13,7 @@ To install Apache
 
     class {'apache':  }
 
-To install the Apache PHP module
+To also install the Apache PHP module
 
     class {'apache::mod::php': }
 
@@ -43,7 +45,7 @@ logfile to an alternate location, might be:
 Dependencies
 ------------
 
-Some functionality is dependent on other modules:
+Some functionality is dependent on other modules, but is not required by default:
 
 - [stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
 - [firewall](https://github.com/puppetlabs/puppetlabs-firewall)
@@ -66,6 +68,7 @@ Copyright and License
 Copyright (C) 2012 [Puppet Labs](https://www.puppetlabs.com/) Inc, Johan van den Dorpe
 
 Puppet Labs can be contacted at: info@puppetlabs.com
+
 Johan van den Dorpe can be contacted at: johan.vandendorpe@gmail.com
 
 Licensed under the Apache License, Version 2.0 (the "License");
