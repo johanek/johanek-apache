@@ -14,7 +14,8 @@ class apache (
   $serveradmin  = 'root@localhost',
   $sendfile     = false
 ) {
-  include apache::params
+
+  class { 'apache::params': }
 
   package { 'httpd':
     ensure => installed,
