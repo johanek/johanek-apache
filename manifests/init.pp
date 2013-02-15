@@ -14,9 +14,13 @@
 # [*enableboot*]
 #   Set to 'false' to prevent service starting at boot
 #
+# [*version*]
+#   Set to desired version. Default: latest
+#
 class apache (
   $enabled        = true,
   $enableboot     = true,
+  $version        = latest,
   $default_mods = true,
   $service_enable = true,
   $serveradmin  = 'root@localhost',

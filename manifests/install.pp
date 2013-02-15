@@ -1,7 +1,7 @@
 class apache::install {
 
   package { 'httpd':
-    ensure => installed,
+    ensure => $apache::version,
     name   => $apache::params::apache_name,
   }
 
