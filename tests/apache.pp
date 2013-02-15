@@ -1,6 +1,8 @@
-include apache
-include apache::mod::php
-include apache::mod::cgi
-include apache::mod::userdir
-include apache::mod::disk_cache
-include apache::mod::proxy_http
+class { 'apache': }
+class { 'apache::mod::php': }
+class { 'apache::mod::cgi': }
+class { 'apache::mod::userdir': }
+class { 'apache::mod::disk_cache': }
+class { 'apache::mod::proxy_http': }
+class { 'apache::mod::proxy': }
+class { 'apache::mod::cache': }

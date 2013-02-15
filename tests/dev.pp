@@ -1,1 +1,2 @@
-include apache::dev
+class { 'apache': }
+class { 'apache::mod::dev': }

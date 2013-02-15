@@ -1,4 +1,4 @@
-include apache
+class { 'apache': }
 apache::vhost {
   'test.vhost':
     port     => 80,
