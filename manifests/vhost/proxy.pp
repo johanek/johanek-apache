@@ -32,19 +32,12 @@ define apache::vhost::proxy (
     $no_proxy_uris = []
   ) {
 
-  class { 'apache': }
-  class { 'apache::proxy': }
-
   $apache_name = $apache::params::apache_name
   $ssl_path = $apache::params::ssl_path
   if $servername == '' {
     $srvname = $name
   } else {
     $srvname = $servername
-  }
-
-  if $ssl == true {
-    class { 'apache::mod::ssl': }
   }
 
   # Template uses:
