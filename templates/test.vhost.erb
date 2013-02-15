@@ -11,8 +11,8 @@ NameVirtualHost *:80
     Order allow,deny
     allow from all
   </Directory>
-  ErrorLog /var/log/apache2/error.log
+  ErrorLog <%= scope.lookupvar('apache::params::log_dir') -%>/error.log
   LogLevel warn
-  CustomLog /var/log/apache2/access.log combined
+  CustomLog <%= scope.lookupvar('apache::params::log_dir') -%>/access.log combined
   ServerSignature On
 </VirtualHost>

@@ -59,6 +59,7 @@ class apache::params {
     $mod_dir               = "${httpd_dir}/mod.d"
     $vdir                  = "${httpd_dir}/conf.d"
     $conf_file             = 'httpd.conf'
+    $log_dir               = '/var/log/httpd'
     $mod_packages          = {
       'dev'        => 'httpd-devel',
       'fcgid'      => 'mod_fcgid',
@@ -81,6 +82,7 @@ class apache::params {
     $user                  = 'www-data'
     $group                 = 'www-data'
     $apache_name           = 'apache2'
+    $log_dir               = '/var/log/apache2'
     $php_package           = 'libapache2-mod-php5'
     $mod_passenger_package = 'libapache2-mod-passenger'
     $mod_python_package    = 'libapache2-mod-python'
