@@ -25,9 +25,8 @@ define apache::vhost::redirect (
     $template      = 'apache/vhost-redirect.conf.erb',
     $servername    = $apache::params::servername,
     $vhost_name    = '*'
+    $configure_firewall = false
   ) {
-
-  class { 'apache': }
 
   if $servername == '' {
     $srvname = $name
@@ -45,12 +44,14 @@ define apache::vhost::redirect (
     notify  => Class['apache::service']
   }
 
-  if ! defined(Firewall["0100-INPUT ACCEPT $port"]) {
-    @firewall {
-      "0100-INPUT ACCEPT $port":
-        jump  => 'ACCEPT',
-        dport => '$port',
-        proto => 'tcp'
+  if $configure_firewall {
+    if ! defined(Firewall["0100-INPUT ACCEPT $port"]) {
+      @firewall {
+        "0100-INPUT ACCEPT $port":
+          jump  => 'ACCEPT',
+          dport => '$port',
+          proto => 'tcp'
+      }
     }
   }
 }
