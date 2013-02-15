@@ -16,11 +16,8 @@ class apache (
 ) {
 
   class { 'apache::params': }
+  class { 'apache::install': } ->
 
-  package { 'httpd':
-    ensure => installed,
-    name   => $apache::params::apache_name,
-  }
 
   # true/false is sufficient for both ensure and enable
   validate_bool($service_enable)
