@@ -19,9 +19,6 @@ class apache::config {
       ensure  => present,
       content => template("apache/${apache::params::conf_file}.erb")
     }
-    if $apache::default_mods == true {
-      class { 'apache::mod::default': }
-    }
   }
 
   # Debian style config
@@ -34,6 +31,5 @@ class apache::config {
       purge => true,
     }
   }
-
-
+  
 }
