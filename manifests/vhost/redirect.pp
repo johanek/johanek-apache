@@ -20,11 +20,11 @@
 define apache::vhost::redirect (
     $port,
     $dest,
-    $priority      = '10',
-    $serveraliases = '',
-    $template      = 'apache/vhost-redirect.conf.erb',
-    $servername    = $apache::params::servername,
-    $vhost_name    = '*'
+    $priority           = '10',
+    $serveraliases      = '',
+    $template           = 'apache/vhost-redirect.conf.erb',
+    $servername         = $apache::params::servername,
+    $vhost_name         = '*',
     $configure_firewall = false
   ) {
 
