@@ -1,4 +1,4 @@
-class apache::mod::dev inherits apache::params {
+class apache::mod::dev {
   # Development packages have no mod to load
   $packages = $apache::params::mod_packages['dev']
   package { $packages:

@@ -23,7 +23,7 @@ class apache::config {
       class { 'apache::mod::default': }
     }
   }
-  
+
   # Debian style config
   if $apache::params::mod_dir {
     file { $apache::params::mod_dir:
@@ -34,6 +34,6 @@ class apache::config {
       purge => true,
     }
   }
-  
+
 
 }
