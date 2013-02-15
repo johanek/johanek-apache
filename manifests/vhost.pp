@@ -42,7 +42,7 @@ define apache::vhost(
     $docroot_owner      = 'root',
     $docroot_group      = 'root',
     $serveradmin        = false,
-    $configure_firewall = true,
+    $configure_firewall = false,
     $ssl                = $apache::params::ssl,
     $template           = $apache::params::template,
     $priority           = $apache::params::priority,
