@@ -37,6 +37,6 @@ class apache (
   class { 'apache::params': } ->
   class { 'apache::install': } ->
   class { 'apache::config': } ->
-  class { 'apache::service }
+  class { 'apache::service': }
 
 }
