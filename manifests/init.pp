@@ -7,12 +7,11 @@
 #
 # == Parameters
 #
-
 # [*enabled*]
-#   Set to 'false' to stop service
+#   Set to 'false' to stop service. Default: true
 #
 # [*enableboot*]
-#   Set to 'false' to prevent service starting at boot
+#   Set to 'false' to prevent service starting at boot. Default: true
 #
 # [*version*]
 #   Set to desired version. Default: latest
