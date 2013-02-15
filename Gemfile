@@ -10,4 +10,6 @@ else
   gem 'puppet', :require => false
 end
 
+gem "puppet-lint"
+
 # vim:ft=ruby
