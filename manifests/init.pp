@@ -1,17 +1,13 @@
-# Class: apache
+# = Class: apache
 #
-# This class installs Apache
+# This class will install apache
 #
-# Parameters:
+#== Requirements
+# None
 #
-# Actions:
-#   - Install Apache
-#   - Manage Apache service
+# == Parameters
 #
-# Requires:
-#
-# Sample Usage:
-#
+
 class apache (
   $default_mods = true,
   $service_enable = true,
