@@ -5,9 +5,8 @@ describe 'apache::mod::auth_kerb', :type => :class do
     let :facts do
       { :osfamily => 'Debian' }
     end
-    it { should include_class("apache") }
     it { should contain_package("mod_auth_kerb_package").with(
-     'require' => 'Package[httpd]'
+     'require' => 'Class[Apache::Install]'
       )
     }
     it { should contain_a2mod("auth_kerb").with(

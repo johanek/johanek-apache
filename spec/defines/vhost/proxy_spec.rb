@@ -60,8 +60,8 @@ describe 'apache::vhost::proxy', :type => :define do
           'owner'     => 'root',
           'group'     => 'root',
           'mode'      => '0755',
-          'require'   => 'Package[httpd]',
-          'notify'    => 'Service[httpd]'
+          'require'   => 'Class[Apache::Install]',
+          'notify'    => 'Class[Apache::Service]'
         })
       }
 

@@ -66,7 +66,7 @@ describe 'apache::vhost', :type => :define do
             'owner'     => 'root',
             'group'     => 'root',
             'mode'      => '0755',
-            'notify'    => 'Service[httpd]'
+            'notify'    => 'Class[Apache::Service]'
           })
         }
 

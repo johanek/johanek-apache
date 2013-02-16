@@ -35,8 +35,8 @@ describe 'apache::vhost::redirect', :type => :define do
             'owner'     => 'root',
             'group'     => 'root',
             'mode'      => '0755',
-            'require'   => 'Package[httpd]',
-            'notify'    => 'Service[httpd]'
+            'require'   => 'Class[Apache::Install]',
+            'notify'    => 'Class[Apache::Service]'
           })
         }
         # FIXME: Firewall is not actually realized anywhere
