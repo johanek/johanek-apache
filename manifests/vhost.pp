@@ -58,6 +58,9 @@ define apache::vhost(
     $access_log         = true,
     $ensure             = 'present'
   ) {
+  
+  require 'apache'
+  require 'apache::mod::ssl'
 
   if $servername == '' {
     $srvname = $name

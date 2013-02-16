@@ -1,6 +1,7 @@
 define apache::mod (
   $package = undef
 ) {
+  require 'apache'
   $mod = $name
   $mod_packages = $apache::params::mod_packages
   $mod_package = $mod_packages[$mod] # 2.6 compatibility hack

@@ -1,4 +1,6 @@
 class apache::mod::wsgi {
+  
+  require 'apache'
 
   package { 'mod_wsgi_package':
     ensure  => installed,

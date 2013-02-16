@@ -32,6 +32,8 @@ define apache::vhost::proxy (
     $no_proxy_uris = []
   ) {
 
+  require 'apache'
+  require 'apache::mod::ssl'
   $apache_name = $apache::params::apache_name
   $ssl_path = $apache::params::ssl_path
   if $servername == '' {

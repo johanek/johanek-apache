@@ -28,6 +28,8 @@ define apache::vhost::redirect (
     $configure_firewall = false
   ) {
 
+  require 'apache'
+
   if $servername == '' {
     $srvname = $name
   } else {
