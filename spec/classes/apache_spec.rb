@@ -15,7 +15,6 @@ describe 'apache', :type => :class do
     it { should contain_file("httpd_vdir").with(
       'ensure'  => 'directory',
       'recurse' => 'true',
-      'purge'   => 'true',
       'notify'  => 'Class[Apache::Service]'
       )
     }
@@ -34,7 +33,6 @@ describe 'apache', :type => :class do
     it { should contain_file("httpd_vdir").with(
       'ensure'  => 'directory',
       'recurse' => 'true',
-      'purge'   => 'true',
       'notify'  => 'Class[Apache::Service]'
       )
     }

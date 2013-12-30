@@ -9,7 +9,6 @@ class apache::config {
     ensure  => directory,
     path    => $apache::params::vdir,
     recurse => true,
-    purge   => true,
     notify  => Class['apache::service']
   }
 
