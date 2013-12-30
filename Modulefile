@@ -1,5 +1,5 @@
 name 'johanek-apache'
-version '0.5.0-rc1'
+version '0.5.1'
 source 'git://github.com/johanek/johanek-apache.git'
 author 'johanek'
 license 'Apache 2.0'
