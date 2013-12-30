@@ -17,4 +17,4 @@ matrix:
       env: PUPPET_GEM_VERSION="~> 2.7"
 notifications:
   email:
-    - johan.vandendorpe@gmail.com
+    - johan@johan.org.uk
